@@ -1,0 +1,592 @@
+/*文字エンコーディング*/
+@charset "UTF-8";
+
+/*↓body要素すべての文字をデザイン*/
+body{
+
+line-height: 1.7;/*行間の指定*/
+font-size: 16px;/*文字の大きさ*/
+
+    /*↓文字フォントの指定 適用させたい順に
+    記述する。*/
+    font-family: -apple-system,BlinkMacsystemFont, "Helvetica Neue","游ゴシック medium", YugothicM, "Hiragino kaku Gothic ProN",
+    Meiryo, sans-serif;
+    
+}
+
+/*↑"Helvetica Neue"ヘルベチカフォント*/
+/*↑游ゴシック(ゆうゴシック＝游書体（ゆう書体）)
+*/
+
+/*↓アンカー要素の装飾。疑似クラスを使用*/
+/*↓訪問前が青。訪問後が紫という指定*/
+
+
+/*リンクを指定してリンクは基本ブルー*/
+a,a:link{
+    color:#3585b7;
+}
+
+
+/*visitedプロパティでアクセス後に紫にする*/
+a:visited{
+    color:#6252b7;
+}
+
+
+/*ホバープロパティでマウスを合わせた時に、下線削除*/
+a:hover{
+    /*テキストの初期化*/
+    text-decoration:none;
+    /*濃色の黒*/
+    color: #555;
+}
+
+
+/*どこのコードを記述しているのかわかりやすくするため、大枠の要素をコメントアウトとして記述する*/
+
+
+/*  header  */
+
+/*ヘッダーをまず編集する*/
+
+/*ロゴ・ホーム〜交通アクセスを編集*/
+/*横並びにするdisplay:flexセレクタ*/
+header{
+    display:flex;
+}
+
+/*左すぎるロゴを少し右寄りに空白を少しおく*/
+/*行き先は上 右 下 左 で上と左に20の空白を置いたmarginで*/
+header h1{
+    margin: 25px 0 0 20px;
+}
+
+
+/*  ホームといったナビゲーションリンクを右詰めにレイアウト    */
+
+header nav{
+    margin: 0 0 0 auto;
+}
+/*↑記述は上・右・下・左*/
+
+/*
+ホームとヘッダーで囲ったnav要素の編集
+
+・list styleでhtmlの箇条書きの『●』を削除
+・上下に余白を持たせ、
+・paddingで余計な余白をカット
+・display:flexで横並びに*/
+header nav ul
+{
+    list-style-type:none;
+    margin:20px 0;
+    padding: 0;
+    display:flex;
+}
+
+
+/*head内のリンクをデザインする*/
+
+
+/*ヘッダの中のリンクを指定：<a>アンカ*/
+header nav ul li a,
+/*ヘッダー内のリンクに触れても指定<link>*/
+header nav ul li a:link,
+/*リンク滞在したらまで指定<visited>*/
+header nav ul li a:visited{
+    
+    /*ブロックレベルに昇華させ、細部まで触れるようにする。*/
+    display:block;
+    
+    /*余白削除 上下10px 左右15PX*/
+    padding: 10px 15px;
+    
+    /*htmlの基本装飾の下線をリセット*/
+    text-decoration:none;
+    /*基本のナビゲーションリンクは黒*/
+    color: #000;
+}
+
+
+/*ホーム〜交通アクセスは、マウスカーソルを当てた時若干浮く感じで色は黒がイイ*/
+
+/*a:hover{}colorはブラック*/
+header nav ul li a:hover{
+    color:#000;
+}
+
+/* footer */
+/*フッター要素にスモークピンクの背景色*/
+
+/*background背景*/
+footer{
+    background: #ede6e6;
+    /*要素は 上下左右20PX*/
+    padding: 20px;
+}
+
+/*ul要素の『•』を削除*/
+/*margin_上下 左 右に6pxの余白*/
+/*リンクが乱れ打ちしないように値を絞る*/
+/*flexで横並び*/
+/*flex-endで右揃え*/
+footer ul{
+    list-style-type: none;
+    margin: 0 0 5px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/*サイトマップのリンクリストの余白を絞る。
+上下左を0, 右だけ20PXでfooter指定の20PXと同じ値にしておく*/
+footer ul li{
+    margin: 0 0 0 20px;
+}
+
+
+/*  ※nav要素と書式を同じにする  */
+
+
+/*html要素のnav『・』を削除*/
+/*文字サイズを13pxで小さく*/
+/*色は黒*/
+
+footer ul li a,
+footer ul li a:link,
+footeer ul li a:visited{
+    text-decoration: none;
+    font-size: 13px;
+    color: #000;
+}
+
+/*マウスカーソルを当てると色が変化*/
+footer ul li a:hover{
+    color: #888;
+}
+
+/*  ※©️著作権表記  */
+/*上段のサイトマップと空白を揃える*/
+/*右揃え*/
+/*カラーコード灰色*/
+footer p{
+    margin: 0;
+    text-align: right;
+    color: #888
+}
+
+
+/* main */
+
+
+/*  ※自由にクラス〜時間帯によって〜までの記述  */
+/*innerクラスの呼び出し*/
+/*幅990px*/
+/*余白を上下50px autoで左右中央寄せ*/
+main .inner{
+    width: 990px;
+    margin: 50px auto;
+}
+
+
+/*余白の要素を上下50px 左0 右20px*/
+/*font-weight：フォントの重み・厚さ*/
+/*フォントの大きさ*/
+/*文字色は濃いピンクを指定*/
+
+main h2{
+    margin: 50px 0 20px;
+    font-weight:normal;
+    font-size: 25px;
+    color: #7f6666;
+}
+
+
+/*  ※中心の写真のこと  */
+/*classパス main→p要素まで。ここではp要素に写真を採用*/
+/*写真の余白指定*/
+main p{
+    margin: 0 0 15px;
+}
+
+/*  ※お知らせを記述  */
+/*
+
+/*dl要素の幅とコンテンツを同じサイズにするためwidthプロパティを100%にする*/
+main dl{
+    width:100%;
+}
+
+
+/*float要素を使用し、dt<日付・
+定義>の下にdl<お知らせ・段落>
+を右から回り込ませる
+*/
+
+
+/*dt要素自体回り込まないように
+*/
+main dl dt{
+    float:left;
+    clear:both;
+/*動作確認*/
+    
+    /*上下10px左右0*/
+    /*カラーはグレー*/
+    padding: 10px 0;
+    color: #998484;
+}
+
+
+/*border-bottom 下線を引く：色はグレー*/
+/*余白0*/
+/*サイトマップから距離を取るため、15pxほど全体を離す。*/
+
+main dl dd{
+    border-bottom: solid 1px #ccc;
+    margin: 0;
+    padding: 10px 0 10px 15%;
+}
+
+
+main ul{
+    margin: 0 0 60px;
+    padding: 0 0 0 20px;
+}
+
+
+
+/* home */
+
+/*
+・class-visualを呼び出し
+・background:背景画像の指定
+・no-繰り返しなし center-中央 top-上
+・高さ550-
+・余白上下200-右左50
+・枠線サイズに合わせる
+*/
+
+.home main .visual{
+
+background:url(../images/visual.jpg)
+    no-repeat center top;
+    
+    height: 550px;
+    padding: 200px 50px 50px;
+    box-sizing: border-box;
+}
+
+/*
+・背景画像の見出しの色を指定
+*/
+.home main .visual p {
+    color: #7f6666;
+}
+
+/*
+・フォントサイズを指定
+*/
+.home main .visual p.catch{
+    font-size: 45px;
+}
+
+/*↓section要素へ
+・flexに指定
+・余白をすべて50px開ける
+*/
+.home main section{
+    display: flex;
+    margin-top: 50px;
+}
+
+/*
+・section内のdiv（自由に暮らす猫ちゃん）
+・テキストと写真の間に余白を作る
+*/
+.home main section div{
+    padding: 0 40px 0 0 ;
+}
+
+
+/*
+・mainclassの子要素に擬似クラス指定
+・row-reverseで右から左に並べかえる
+*/
+.home main section:first-child{
+    flex-direction: row-reverse;
+}
+
+/*順序を逆にする書式のクリア*/
+.home main section:first-child div
+{
+    padding: 0 0 0 40px;
+}
+
+
+/*ホーム以外のページを記述*/
+/*
+・ご利用案内の背景を記述
+・余白を50開ける
+・色は薄紫
+*/
+
+main .title{
+    padding: 50px;
+    background: #f4e3e3;
+}
+
+/*ご利用案内の文字を修正
+・他の要素との隙間をなくす
+・1行の高さを1文字分高くする
+・フォントサイズ45px
+・色が濃い紫
+*/
+main .title h1{
+    margin: 0;
+    line-height: 1;
+    font-size: 45px;
+    color: #7f6666;
+}
+
+/*パンくずリストについて書式を指定
+・htmlの『・』を削除
+・20pxの余白を上に開ける
+・周りの空白を削除
+・flexを指定し横並びに
+*/
+main .title ol{
+    list-style-type: none;
+    margin:20px 0 0;
+    padding: 0;
+    display: flex;
+}
+
+/*パンくずリストのフォント
+・titleを呼び出しパンクズすべてのフォントサイズを13に
+*/
+main .title ol li{
+    font-size: 13px;
+}
+
+/*パンクズリストの「>」を加える
+・余白を右を5px、左を10pxだけ開ける
+*/
+main .title ol li::after{
+    content: ">";
+    margin: 0 5px 0 10px;
+}
+
+/*ホーム > ご利用案内の打ち消し
+・ご利用案内のリンクが不要なので
+last-childで打ち消し
+*/
+main .title ol li:last-child::after{
+    content: none;
+}
+
+/*おもちゃで遊ぶ猫ちゃんの位置調整*/
+
+
+/* guide */
+/*営業時間と料金表を記述*/
+
+/*営業時間と料金表を横並びに*/
+.guide main .about{
+    display: flex;
+}
+
+/*内側のdivの幅を50%にする*/
+.guide main .about div{
+    width: 50%;
+}
+
+/*営業時間のレイアウトを調整
+・<dl>の文字を18に
+*/
+.guide main dl{
+    font-size: 18px;
+}
+
+/*営業時間のレイアウト調整
+・ html書式の横線を廃止
+・左に揃える
+*/
+.guide main dd{
+    border: none;
+    padding-left: 5em;
+}
+
+/*お店からのお願位のレイアウトを記述
+・table間を100pxに伸ばし
+・中央揃え
+*/
+
+.guide main table{
+    width: 100%;
+    text-align: center;
+}
+
+/*table要素のスタイルを指定
+・tableの線を綺麗に整える
+*/
+.guide main table,
+.guide main table th,
+.guide main table td{
+    border: solid 1px #ccc;
+    border-collapse: collapse;
+}
+
+/*table要素のスタイル指定
+・内側の空白を削除
+*/
+.guide main table th,
+.guide main table td{
+    padding: 5px;
+}
+
+/*平日・土日、30分コースの背景に色を塗る
+・色薄紫
+*/
+
+.guide main table th{
+    background: #f7f0f0;
+    color: #998484;
+}
+
+
+/* cast */
+
+/*キャストを作成*/
+
+/*画像と画像の余白を設定*/
+.cast main .cast-profile{
+    display:flex;
+    margin-top:50px;
+}
+
+/*画像と行の余白を設定*/
+.cast main .cast-profile dl {
+    margin: 0 0 0 50px;
+    font-size: 18px;
+}
+
+
+/* contact */
+
+/*※の装飾*/
+
+.contact main .must{
+    margin:0 5px;
+    color:#d23939;
+}
+
+/*入力欄の上としたの余白を設定*/
+.contact main p{
+    margin: 0 0 50px;
+}
+
+/*入力欄の周りを装飾*/
+.contact main dl dd{
+    padding-left:15em;
+}
+
+/*入力欄すべての大きさ*/
+.contact main input,
+.contact main textarea{
+    border: solid 1px #ccc;
+    padding: 5px;
+    box-sizing:border-box;
+}
+
+/*メールの入力欄*/
+.contact main input[name="email"]
+{
+    width:50%;
+}
+
+
+/*テキストボックスの大きさ（質問項目の）*/
+.contact main textarea{
+    width: 100%;
+}
+
+/*送信ボタンの装飾（大きさ）
+・余白を指定
+・中央ぞろえ
+*/
+.contact main .submit{
+    margin:19px 0;
+    text-align:
+        center;
+}
+
+/*送信ボタンの装飾
+・送信ボタンのカラー
+・空白を削除
+・横幅のサイズを指定
+・マウスカーソルの動き
+・フォントの重さ
+・フォントの大きさ
+・フォントの色（白）
+*/
+.contact main input[type="submit"]
+{
+
+   background:#7f6666;
+    padding:20px;
+    width: 300px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:18px;
+    color: #fff;
+}
+
+/*送信ボタンの装飾
+：擬似クラスを使用*/
+.contact main input[type="submit"]:hover{
+    opacity: 0.8;
+    }
+
+
+/* sitemap */
+.sitemap main ul{
+    margin-top: 50px;
+}
+
+.sitemap main ul li{
+    margin: 0 0 20px;
+}
+
+
+/*privacy*/
+.privacy main ul{
+    margin-top: 50px;
+}
+
+.privacy main ul li{
+    margin: 0 0 20px;
+}
+
+.privacy .title{
+    padding: 50px;
+    background: #f4e3e3;
+}
+
+.privacy .title ol {
+    list-style-type: none;
+    margin: 20px 0 0;
+    padding: 0;
+    display: flex;
+}
+
+.privacy ol li::after{
+    content: ">";
+    margin: 0 5px 0 10px;
+}
+
+.privacy ol li:last-child::after{
+    content: none;
+}
